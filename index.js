@@ -58,8 +58,20 @@ d3.json(countyURL).then(
                             tooltip.style("visibility", "visible")
                                 .style("left", e.pageX + 10 + "px")
                                 .style("top", e.pageY - 80 + "px")
-                                .attr("data-date", d[0])
-                                .html(educationData.bachelorsOrHigher + "%");
+                                .attr('data-education', () => {
+                                    let eduMatch = educationData.filter(data => data.fips == d.id);
+                                    if (eduMatch[0]) {
+                                        return eduMatch[0].bachelorsOrHigher;
+                                    }
+                                    return 0;
+                                })
+                                .html(() => {
+                                    let eduMatch = educationData.filter(data => data.fips == d.id);
+                                    if (eduMatch[0]) {
+                                        return `${eduMatch[0].area_name}, ${eduMatch[0].state}<br/> ${eduMatch[0].bachelorsOrHigher}%`
+                                    }
+                                    return 0;
+                                })
                         }
 
                         let mouseLeave = function (d) {
