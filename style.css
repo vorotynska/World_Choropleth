@@ -15,3 +15,7 @@
   svg {
     margin: 50px;
   }
+  #tooltip{
+    position: absolute;
+    z-index: 10;
+  }
