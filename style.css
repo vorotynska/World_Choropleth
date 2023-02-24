@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html{
+    height: 100%
+}
+
+body {
+    background-color: #A7C6D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+svg{
+    background-color: #B4C4D9;
+    box-shadow: 3px 5px 15px #193C40;
+    border-radius: 5px;
+    z-index: 3;
+    margin: 50;
+}
+
 .countries {
     fill: none;
     stroke: #fff;
@@ -12,10 +39,11 @@
       text-anchor: start;
       font-weight: bold;
   }
-  svg {
-    margin: 50px;
-  }
+  
   #tooltip{
     position: absolute;
     z-index: 10;
+  }
+  #title {
+    color: #2A2740;
   }
